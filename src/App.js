@@ -1,26 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/header.tsx'
-import Bye from './components/footer'
+import Fabric from './components/Fabric'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <Fabric name="Fabric"></Fabric>
+      <Welcome name="React"></Welcome>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Welcome name="Arden"></Welcome>
-        <Bye name="Arden"></Bye>
       </header>
     </div>
   );
