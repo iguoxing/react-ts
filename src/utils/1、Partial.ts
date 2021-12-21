@@ -36,7 +36,7 @@ const e: MyPartial<Foo> = {
     c: true
 }
 console.log('e', e);//e { a: 'BFE.dev', b: 123, c: true }
-
+export { }
 
 // keyof，即 索引类型查询操作符【获取keys】，我们可以将 keyof 作用于泛型 T 上来获取泛型 T 上的所有 public 属性名构成的 联合类型
 // in 【遍历keys 获取单个key】我们需要遍历 Foo ，这时候 映射类型就可以用上了，其语法为 [P in Keys]

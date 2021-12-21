@@ -9,29 +9,31 @@ type Foo = {
 }
 
 
-const a: MyRequired<Foo> = {}
-// Error
+// const a: MyRequired<Foo> = {}
+// // Error
 
-const b: MyRequired<Foo> = {
-    a: 'BFE.dev'
-}
+// const b: MyRequired<Foo> = {
+//     a: 'BFE.dev'
+// }
 
-const c: MyRequired<Foo> = {
-    b: 123
-}
-// Error
+// const c: MyRequired<Foo> = {
+//     b: 123
+// }
+// // Error
 
-const d: MyRequired<Foo> = {
-    b: 123,
-    c: true
-}
-// Error
+// const d: MyRequired<Foo> = {
+//     b: 123,
+//     c: true
+// }
+// // Error
 
 const e: MyRequired<Foo> = {
     a: 'BFE.dev',
     b: 123,
     c: true
 }
+console.log('e', e);
+
 
 //-?将可选项代表的 ? 去掉, 从而让这个类型变成必选项
 type MyRequired<T> = { [K in keyof T]-?: T[K] }
