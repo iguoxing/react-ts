@@ -41,22 +41,26 @@ class Polygon extends React.Component {
             x: 0, y: 20
         }]
         var polygon = new fabric.Polygon(points, {
-            left: 100,
+            left: 100,//相对做边距的距离
             top: 50,
-            fill: '#D81B60',
-            strokeWidth: 4,
-            stroke: 'green',
-            scaleX: 4,
-            scaleY: 4,
-            objectCaching: false,
-            transparentCorners: false,
-            cornerColor: 'blue',
-            cornerSize:16,
-            includeDefaultValues :true,
+            fill: '#D81B60',//多边形背景填充色
+            strokeWidth: 4,//多边形边框宽度
+            stroke: 'green',//多边形边框颜色
+            scaleX: 6,//水平方向的宽度（改为10会等比变宽）
+            scaleY: 5,//纵向10会高度撑满，
+            objectCaching: false,//非必须，不缓存
+            transparentCorners: false,//当为true时，转角的点是透明色
+            cornerColor: 'blue',//多边形角的颜色
+            cornerSize:16,//角点的直径
+            includeDefaultValues :true,//默认包含序列化的值
             // inverted:true,
         });
-        canvas.viewportTransform = [0.7, 0, 0, 0.7, -50, 50];
+        // console.log('[ polygon.getViewportTransform() ] >', polygon.getViewportTransform())//[1, 0, 0, 1, 0, 0]
+        canvas.viewportTransform = [0.7, 0, 0, 0.7, 100, 50];//调整视区，具体参数待查
         canvas.add(polygon);
+    }
+    componentDidUpdate(){
+        console.log('this',this);
     }
     render() {
         const controls={
@@ -149,6 +153,7 @@ class Polygon extends React.Component {
             poly.hasBorders = !poly.edit;
             canvas.requestRenderAll();
         }
+        
         return <div>
             <h1>Learn, {this.props.name}</h1>
             <div className={controls}>
