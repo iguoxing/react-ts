@@ -2,6 +2,8 @@
 import React, { useState,useCallback } from 'react';
 import { Button } from 'antd';
 import "antd/dist/antd.css";
+let lastCallback
+let lastCallbackDependencies
 
 function HookUseCallback(props) {
   // 声明一个新的叫做 “count” 的 state 变量
@@ -10,8 +12,6 @@ function HookUseCallback(props) {
   // 该回调函数仅在某个依赖项改变时才会更新。当你把回调函数传递给经过优化的并使用引用相等性去避免非
   // 必要渲染（例如 shouldComponentUpdate）的子组件时，它将非常有用。
   // useCallback(fn, deps) 相当于 useMemo(() => fn, deps)。
-  let lastCallback
-  let lastCallbackDependencies
   function myClickFunction(callback,dependencies){
     if(lastCallbackDependencies){
         let changed = !dependencies.every((item,index)=>{
@@ -33,7 +33,7 @@ function HookUseCallback(props) {
   const clickFunction =useCallback(
     () => {
        setCount(count + 1);
-    },[],
+    },[count],
   );
 
   return (
