@@ -2,7 +2,7 @@
  * @Author: ArdenZhao
  * @Date: 2021-12-07 11:35:45
  * @LastEditors: Do not edit
- * @LastEditTime: 2021-12-28 10:40:42
+ * @LastEditTime: 2021-12-30 14:29:52
  * @FilePath: /react-ts/src/components/Fabric.js
  */
 import React from 'react';
@@ -15,10 +15,10 @@ class Fabric extends React.Component {
         }
     }
     componentDidMount(){
-        fabric.textureSize = 5120;//1024*5=5120
+        fabric.textureSize = 5120;//限制图片上限为5M  1024*5=5120
         const canvas = new fabric.Canvas('canvas');
         console.log('canvas',canvas);
-        // 图片
+        // // 图片
         const imgEl = document.createElement('img')
         imgEl.crossOrigin = 'Anonymous' // 让图片能让所有人存取
         imgEl.src = 'https://speechocean-bj.oss-cn-beijing.aliyuncs.com/0.Zzd/1015ziyouku_En/Book/18ac1a7879a187d7805944d3edfe471c8886f7a5318210b578380a5c6f439133.JPG'
@@ -37,6 +37,13 @@ class Fabric extends React.Component {
             // 这边需要重整所有的滤镜效果
             image.applyFilters()
             canvas.add(image)
+            var line = new fabric.Line([10, 20, 115, 110], {
+                strokeWidth: 2,
+                stroke: 'red',
+                originX: 'center',
+                originY: 'center'
+            });
+            canvas.add(line);
         }
     };
     render() {
