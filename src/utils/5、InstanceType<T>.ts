@@ -2,7 +2,7 @@
  * @Author: ArdenZhao
  * @Date: 2022-01-14 19:20:06
  * @LastEditors: Do not edit
- * @LastEditTime: 2022-01-14 23:52:18
+ * @LastEditTime: 2022-03-05 10:12:32
  * @FilePath: /react-ts/src/utils/5、InstanceType<T>.ts
  * https://bigfrontend.dev/zh/typescript/InstanceType
  */
