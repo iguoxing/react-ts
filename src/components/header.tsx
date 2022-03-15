@@ -1,4 +1,11 @@
-import React from 'react';
+/*
+ * @Author: ArdenZhao
+ * @Date: 2021-12-17 21:44:51
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2022-03-05 10:54:30
+ * @FilePath: /react-ts/src/components/header.tsx
+ */
+import React, { useState } from 'react';
 
 interface WelcomeProps {
     name: string;

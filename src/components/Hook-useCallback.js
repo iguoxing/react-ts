@@ -1,3 +1,10 @@
+/*
+ * @Author: ArdenZhao
+ * @Date: 2021-12-29 21:56:12
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2022-03-05 11:07:31
+ * @FilePath: /react-ts/src/components/Hook-useCallback.js
+ */
 // Copyright 2021 zhaoguoxing
 import React, { useState,useCallback } from 'react';
 import { Button } from 'antd';
@@ -35,6 +42,21 @@ function HookUseCallback(props) {
        setCount(count + 1);
     },[count],
   );
+  // useState 不能放在函数内部
+  const [num, setNum] = useState(0);
+  const clickX = () => {
+    // const [num, setNum] = useState(Math.random());
+    setNum(num + 1); // 设置num为11没有生效，为啥不生效呢？如何解决呢
+    console.log('1', num)
+    return <h1>{num}</h1>
+  }
+
+  // useCallback 使不使用，都可以实现自增哈
+  const clickY = useCallback(() => {
+    // const [num, setNum] = useState(Math.random());
+    setNum(num + 1); // 设置num为11当前函数内没有生效，在函数外的页面中有改变生效
+    console.log('12', num)
+  },[num])
 
   return (
     <div>
@@ -46,6 +68,12 @@ function HookUseCallback(props) {
       <p>You clicked {count} times</p>
       <Button type="primary" onClick={clickFunction}>
         Click me
+      </Button>
+      <Button onClick={clickX}>
+        Click x--{num}
+      </Button>
+      <Button onClick={clickY}>
+        Click Y--{num}
       </Button>
     </div>
   );
