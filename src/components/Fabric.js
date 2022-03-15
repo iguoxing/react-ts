@@ -1,8 +1,8 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-07 11:35:45
- * @LastEditors: Do not edit
- * @LastEditTime: 2021-12-30 15:12:36
+ * @LastEditors: bogon
+ * @LastEditTime: 2022-03-15 18:17:11
  * @FilePath: /react-ts/src/components/Fabric.js
  */
 import React from 'react';
@@ -10,14 +10,14 @@ import { fabric } from "fabric";
 class Fabric extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            canvas:new fabric.Canvas('canvas')
+        this.state = {
+            canvas: new fabric.Canvas('canvas')
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         fabric.textureSize = 5120;//限制图片上限为5M  1024*5=5120
         const canvas = new fabric.Canvas('canvas');
-        console.log('canvas',canvas);
+        console.log('canvas', canvas);
         // // 图片 方式一：
         // const imgEl = document.createElement('img')
         // imgEl.crossOrigin = 'Anonymous' // 让图片能让所有人存取
@@ -53,7 +53,7 @@ class Fabric extends React.Component {
             const image = new fabric.Image(imgEl, {
             })
             canvas.bgImgSize = { width: img.width, height: img.height }
-            image.filters.push(new fabric.Image.filters.Contrast({contrast: 0.01}))
+            image.filters.push(new fabric.Image.filters.Contrast({ contrast: 0.01 }))
             image.applyFilters()
             //添加背景图
             canvas && canvas.setBackgroundImage(image, (rst) => {
