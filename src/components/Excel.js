@@ -1,12 +1,12 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-17 21:44:51
- * @LastEditors: Zhaos-MacBook-Pro.local
- * @LastEditTime: 2022-03-16 13:09:44
+ * @LastEditors: bogon
+ * @LastEditTime: 2022-03-16 16:19:48
  * @FilePath: /react-ts/src/components/Excel.js
  */
 import React from 'react';
-import { XLSX } from "xlsx";
+import * as XLSX from "xlsx";
 
 class Excel extends React.Component {
     constructor(props) {
