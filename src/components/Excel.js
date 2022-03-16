@@ -1,12 +1,13 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-17 21:44:51
- * @LastEditors: bogon
- * @LastEditTime: 2022-03-16 16:19:48
+ * @LastEditors: Zhaos-MacBook-Pro.local
+ * @LastEditTime: 2022-03-16 17:28:46
  * @FilePath: /react-ts/src/components/Excel.js
  */
 import React from 'react';
 import * as XLSX from "xlsx";
+import { Row, Col, Button, Table } from 'antd';
 
 class Excel extends React.Component {
     constructor(props) {
@@ -22,6 +23,9 @@ class Excel extends React.Component {
         /* Boilerplate to set up FileReader */
         const reader = new FileReader();
         const rABS = !!reader.readAsBinaryString;
+        const handleTitle = function (val) {
+            return val.replace(/\s+/g, '');
+        }
         reader.onload = e => {
             /* Parse data */
             const bstr = e.target.result;
@@ -32,8 +36,47 @@ class Excel extends React.Component {
             console.log(rABS, wb);
             /* Convert array of arrays */
             const data = XLSX.utils.sheet_to_json(ws, { header: 1 });
+            const titles = data[0]
+            // const showData = {
+            //     name: handleTitle(titles[1]), // 用户昵称
+            //     date: handleTitle(titles[4]), // 打卡时间
+            //     homework: handleTitle(titles[5]), // 所属作业
+            //     words: handleTitle(titles[6]), // 文字内容
+            //     images: handleTitle(titles[7]), //图片内容
+            // }
+            const columns = [
+                {
+                    title: handleTitle(titles[5]),// 所属作业
+                    dataIndex: 'homework',
+                },
+                {
+                    title: handleTitle(titles[4]),// 打卡时间
+                    dataIndex: 'date',
+                },
+                {
+                    title: handleTitle(titles[5]),// 所属作业
+                    dataIndex: 'words',
+                }
+            ];
+            const dataSource = []
+            data.forEach((item, index) => {
+                if (index > 0) {
+                    let tmp = {
+                        name: handleTitle(item[1]), // 用户昵称
+                        date: handleTitle(item[4]), // 打卡时间
+                        homework: handleTitle(item[5]).slice(2), // 所属作业
+                        words: handleTitle(item[6]), // 文字内容
+                        images: handleTitle(item[7]), //图片内容
+                    }
+                    dataSource.push(tmp)
+                }
+            })
+            dataSource.reverse()
+            console.log('[ data ] >', data, columns, dataSource)
+
+            // debugger
             /* Update state */
-            this.setState({ data: data, cols: make_cols(ws["!ref"]) });
+            this.setState({ data: dataSource, cols: columns });
         };
         if (rABS) reader.readAsBinaryString(file);
         else reader.readAsArrayBuffer(file);
@@ -49,25 +92,20 @@ class Excel extends React.Component {
     render() {
         return (
             <DragDropFile handleFile={this.handleFile}>
-                <div className="row">
-                    <div className="col-xs-12">
+                <Row gutter={16}>
+                    <Col className="gutter-row" span={16}>
                         <DataInput handleFile={this.handleFile} />
-                    </div>
-                </div>
+                    </Col>
+                    <Col className="gutter-row" span={6}>
+                        <Button type="primary" disabled={!this.state.data.length} onClick={this.exportFile}>
+                            导出
+                        </Button>
+                    </Col>
+                </Row>
                 <div className="row">
                     <div className="col-xs-12">
-                        <button
-                            disabled={!this.state.data.length}
-                            className="btn btn-success"
-                            onClick={this.exportFile}
-                        >
-                            Export
-                        </button>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-12">
-                        <OutTable data={this.state.data} cols={this.state.cols} />
+                        <Table dataSource={this.state.data} columns={this.state.cols} pagination={false} />
+                        {/* <OutTable data={this.state.data} cols={this.state.cols} /> */}
                     </div>
                 </div>
             </DragDropFile>
@@ -128,7 +166,7 @@ class DataInput extends React.Component {
         return (
             <form className="form-inline">
                 <div className="form-group">
-                    <label htmlFor="file">Spreadsheet</label>
+                    <label htmlFor="file">上传文件</label>
                     <input
                         type="file"
                         className="form-control"
