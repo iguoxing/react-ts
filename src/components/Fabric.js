@@ -1,8 +1,8 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-07 11:35:45
- * @LastEditors: bogon
- * @LastEditTime: 2022-03-15 18:17:11
+ * @LastEditors: Zhaos-MacBook-Pro.local
+ * @LastEditTime: 2022-03-16 11:42:55
  * @FilePath: /react-ts/src/components/Fabric.js
  */
 import React from 'react';
@@ -76,8 +76,10 @@ class Fabric extends React.Component {
     };
     render() {
         return <div>
-            <h1>Learn, {this.props.name}</h1>
-            <canvas id="canvas" width="1000" height="800"></canvas>
+            <h1 className="text-6xl text-red-500">Learn, {this.props.name}</h1>
+            <div className="flex-justify-center">
+                <canvas id="canvas" width="1200" height="720"></canvas>
+            </div>
         </div>;
     }
 }

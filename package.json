@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@craco/craco": "^6.4.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -46,8 +47,12 @@
     "@types/react": "^17.0.37",
     "@types/react-router-dom": "^5.3.3",
     "antd": "^4.17.4",
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.39",
     "react-draggable": "^4.4.4",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "ts-node": "^10.4.0",
-    "tslib": "^2.3.1"
+    "tslib": "^2.3.1",
+    "xlsx": "^0.18.4"
   }
 }

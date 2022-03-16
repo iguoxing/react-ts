@@ -52,6 +52,9 @@ class PageMenu extends React.Component {
                             </Menu.Item>
                         </Menu.ItemGroup>
                     </SubMenu>
+                    <Menu.Item key="excel" icon={<MailOutlined />}>
+                        <Link to="/excel">Excel</Link>
+                    </Menu.Item>
                     {/* <Menu.Item key="hookUseCallback" icon={<AppstoreOutlined />}>
                         <Link to="hookUseCallback">HookUseCallback</Link>
                     </Menu.Item> */}

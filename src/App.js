@@ -1,21 +1,21 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-23 10:36:10
- * @LastEditors: bogon
- * @LastEditTime: 2022-03-15 18:25:40
+ * @LastEditors: Zhaos-MacBook-Pro.local
+ * @LastEditTime: 2022-03-16 12:43:01
  * @FilePath: /react-ts/src/App.js
  */
-import React, { Suspense, lazy } from 'react';
-import ReactDOM from 'react-dom';
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
 import './App.css';
 import PageMenu from './components/PageMenu'
 import Welcome from './components/header.tsx'
+import Excel from './components/Excel.js'
 import Fabric from './components/Fabric'
 import Dragable from './components/Dragable'
 import HookUseCallback from './components/Hook-useCallback'
 import Polygon from './components/Polygon';
-import { BrowserRouter as Router, Routes, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import "tailwindcss/tailwind.css"
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
               <Route path="/polygon" element={<Polygon name="Polygon" />} />
               <Route path="/dragable" element={<Dragable name="Dragable" />} />
               <Route path="/hookUseCallback" element={<HookUseCallback name="HookUseCallback" />} />
+              <Route path="/excel" element={<Excel name="Excel" />} />
               {/* <Route path="/polygon" element={<Polygon name="Fabric" />} /> */}
             </Routes>
           </Suspense>

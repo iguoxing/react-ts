@@ -27,6 +27,10 @@
 .App-link {
   color: #61dafb;
 }
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
 .App h1, h2, h3, h4, h5, h6{color: #fff;}
 @keyframes App-logo-spin {
   from {
