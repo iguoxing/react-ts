@@ -24,15 +24,25 @@ jobs:
 
       - name: Build 🏗️
         run: yarn build
-      - name: Create Tag Release
-        uses: beyond5959/create-release-github@v1
-        with:
-          tag_name: 7e80c809f34b653a75d675520a69e3295861f68a
-          release_name: Release 7e80c809f34b653a75d675520a69e3295861f68a
-          draft: false
-          prerelease: false
+      # - name: Create Tag Release
+      #   uses: beyond5959/create-release-github@v1
+      #   with:
+      #     tag_name: 7e80c809f34b653a75d675520a69e3295861f68a
+      #     release_name: Release 7e80c809f34b653a75d675520a69e3295861f68a
+      #     draft: false
+      #     prerelease: false #Error: Bad credentials
 
 
       # - name: Test 🚨
       #   run: npm test
+      # 上传打包资源
+            - name: Deploy
+              uses: easingthemes/ssh-deploy@v2.0.7
+              env:
+                  SSH_PRIVATE_KEY: ${{ env.SERVER_PRIVATE_KEY }}
+                  ARGS: '-avz --delete'
+                  SOURCE: 'dist/'
+                  REMOTE_HOST: ${{ env.SERVER_HOST }}
+                  REMOTE_USER: ${{ env.USER_NAME }}
+                  TARGET: /var/www/susieTool # 服务器目标路径
 
