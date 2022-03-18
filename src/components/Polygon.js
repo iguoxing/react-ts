@@ -1,19 +1,19 @@
 // Copyright 2021 zhaoarden
-import React, { useState,useCallback } from 'react';
+import React from 'react';
 import { fabric } from "fabric";
 import { Button } from 'antd';
 class Polygon extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            canvas:{}
+        this.state = {
+            canvas: {}
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         console.log('componentDidMount');
-        const canvas =  new fabric.Canvas('c');
-        console.log('canvas',canvas);
-        this.setState({canvas:canvas})
+        const canvas = new fabric.Canvas('c');
+        console.log('canvas', canvas);
+        this.setState({ canvas: canvas })
         // console.log('state-canvas',this.state.canvas);
         var points = [{
             x: 3, y: 4
@@ -51,22 +51,22 @@ class Polygon extends React.Component {
             objectCaching: false,//非必须，不缓存
             transparentCorners: false,//当为true时，转角的点是透明色
             cornerColor: 'blue',//多边形角的颜色
-            cornerSize:16,//角点的直径
-            includeDefaultValues :true,//默认包含序列化的值
+            cornerSize: 16,//角点的直径
+            includeDefaultValues: true,//默认包含序列化的值
             // inverted:true,
         });
         // console.log('[ polygon.getViewportTransform() ] >', polygon.getViewportTransform())//[1, 0, 0, 1, 0, 0]
         canvas.viewportTransform = [0.7, 0, 0, 0.7, 100, 50];//调整视区，具体参数待查
         canvas.add(polygon);
     }
-    componentDidUpdate(){
-        console.log('this',this);
+    componentDidUpdate() {
+        console.log('this', this);
     }
     render() {
-        const controls={
+        const controls = {
             display: 'inline-block'
         };
-        const {canvas}=this.state
+        const { canvas } = this.state
 
         // define a function that can locate the controls.
         // this function will be used both for drawing and for interaction.
@@ -112,7 +112,6 @@ class Polygon extends React.Component {
                         y: (fabricObject.points[anchorIndex].y - fabricObject.pathOffset.y),
                     }, fabricObject.calcTransformMatrix()),
                     actionPerformed = fn(eventData, transform, x, y),
-                    newDim = fabricObject._setPositionDimensions({}),
                     polygonBaseSize = fabricObject._getNonTransformedDimensions(),
                     newX = (fabricObject.points[anchorIndex].x - fabricObject.pathOffset.x) / polygonBaseSize.x,
                     newY = (fabricObject.points[anchorIndex].y - fabricObject.pathOffset.y) / polygonBaseSize.y;
@@ -121,7 +120,7 @@ class Polygon extends React.Component {
             }
         }
         function Edit() {
-            console.log('canvas',canvas);
+            console.log('canvas', canvas);
             console.log('Edit');
             // clone what are you copying since you
             // may want copy and paste on different moment.
@@ -135,8 +134,8 @@ class Polygon extends React.Component {
                 poly.cornerStyle = 'circle';
                 poly.cornerColor = 'rgba(0,0,255,0.5)';
                 poly.controls = poly.points.reduce(function (acc, point, index) {
-                    console.log('acc',acc);
-                    console.log('point',point);
+                    console.log('acc', acc);
+                    console.log('point', point);
                     acc['p' + index] = new fabric.Control({
                         positionHandler: polygonPositionHandler,
                         actionHandler: anchorWrapper(index > 0 ? index - 1 : lastControl, actionHandler),
@@ -153,7 +152,7 @@ class Polygon extends React.Component {
             poly.hasBorders = !poly.edit;
             canvas.requestRenderAll();
         }
-        
+
         return <div>
             <h1>Learn, {this.props.name}</h1>
             <div className={controls}>
@@ -161,7 +160,7 @@ class Polygon extends React.Component {
                     <Button id="edit" onClick={Edit}>Toggle editing polygon</Button>
                 </p>
             </div>
-            <canvas id="c" width="500" height="400" style={{border:'1px solid #ccc'}}></canvas>
+            <canvas id="c" width="500" height="400" style={{ border: '1px solid #ccc' }}></canvas>
         </div>;
     }
 }

@@ -2,7 +2,7 @@
  * @Author: ArdenZhao
  * @Date: 2021-12-17 21:44:51
  * @LastEditors: Zhaos-MacBook-Pro.local
- * @LastEditTime: 2022-03-18 11:35:15
+ * @LastEditTime: 2022-03-18 14:08:06
  * @FilePath: /react-ts/src/components/Excel.js
  */
 import React from 'react';
@@ -275,11 +275,4 @@ const SheetJSFT = [
     })
     .join(",");
 
-/* generate an array of column objects */
-const make_cols = refstr => {
-    let o = [],
-        C = XLSX.utils.decode_range(refstr).e.c + 1;
-    for (var i = 0; i < C; ++i) o[i] = { name: XLSX.utils.encode_col(i), key: i };
-    return o;
-};
 export default Excel;

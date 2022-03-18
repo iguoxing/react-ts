@@ -1,11 +1,11 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-17 21:44:51
- * @LastEditors: bogon
- * @LastEditTime: 2022-03-15 18:19:31
+ * @LastEditors: Zhaos-MacBook-Pro.local
+ * @LastEditTime: 2022-03-18 14:08:54
  * @FilePath: /react-ts/src/components/header.tsx
  */
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../logo.svg';
 interface WelcomeProps {
     name: string;
