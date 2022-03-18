@@ -1,5 +1,5 @@
 # Copyright 2022 zhaoarden
-name: GitHub Actions Demo
+name: GitHub Actions CI
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -16,4 +16,15 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Install 🔧
+        run: npm install
+
+      # - name: Lint 🧐
+      #   run: npm run lint
+
+      - name: Build 🏗️
+        run: npm run build
+
+      - name: Test 🚨
+        run: npm test
 
