@@ -26,6 +26,11 @@ jobs:
         run: yarn build
       - name: Create Tag Release
         uses: beyond5959/create-release-github@v1
+        with:
+          tag_name: 7e80c809f34b653a75d675520a69e3295861f68a
+          release_name: Release 7e80c809f34b653a75d675520a69e3295861f68a
+          draft: false
+          prerelease: false
 
 
       # - name: Test 🚨
