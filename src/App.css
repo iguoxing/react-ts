@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
 }
-.App h1, h2, h3, h4, h5, h6{color: #fff;}
+.App h1,.App h2,.App h3,.App h4, h5, h6{color: #fff;}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
