@@ -24,18 +24,14 @@ class PageMenu extends React.Component {
                     <Menu.Item key="index" icon={<MailOutlined />}>
                         <Link to="/">首页</Link>
                     </Menu.Item>
-                    <SubMenu key="SubMenu" icon={<SettingOutlined />} title="React API">
+                    {/* <SubMenu key="SubMenu" icon={<SettingOutlined />} title="React API">
                         <Menu.ItemGroup title="Hook">
                             <Menu.Item key="setting:1">
                                 <Link to="hookUseCallback">HookUseCallback</Link>
                             </Menu.Item>
                         </Menu.ItemGroup>
-                        {/* <Menu.ItemGroup title="Item 2">
-                            <Menu.Item key="setting:3">Option 3</Menu.Item>
-                            <Menu.Item key="setting:4">Option 4</Menu.Item>
-                        </Menu.ItemGroup> */}
-                    </SubMenu>
-                    <SubMenu key="fabric" icon={<AppstoreOutlined />} title="Fabric">
+                    </SubMenu> */}
+                    {/* <SubMenu key="fabric" icon={<AppstoreOutlined />} title="Fabric">
                         <Menu.ItemGroup title="Components">
                             <Menu.Item key="line">
                                 <Link to="fabric">Line</Link>
@@ -51,9 +47,9 @@ class PageMenu extends React.Component {
                                 <Link to="dragable">Dragable</Link>
                             </Menu.Item>
                         </Menu.ItemGroup>
-                    </SubMenu>
-                    <Menu.Item key="excel" icon={<MailOutlined />}>
-                        <Link to="/excel">Excel</Link>
+                    </SubMenu> */}
+                    <Menu.Item key="excel" icon={<SettingOutlined />}>
+                        <Link to="/excel">Excel转PDF</Link>
                     </Menu.Item>
                     {/* <Menu.Item key="hookUseCallback" icon={<AppstoreOutlined />}>
                         <Link to="hookUseCallback">HookUseCallback</Link>
