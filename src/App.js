@@ -1,8 +1,8 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-23 10:36:10
- * @LastEditors: Zhaos-MacBook-Pro.local
- * @LastEditTime: 2022-03-16 12:43:01
+ * @LastEditors: localhost
+ * @LastEditTime: 2022-03-18 16:39:55
  * @FilePath: /react-ts/src/App.js
  */
 import React, { Suspense } from 'react';
@@ -25,7 +25,7 @@ function App() {
           <PageMenu name="Menu"></PageMenu>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              <Route path="/" element={<Welcome name="React" />} />
+              <Route path="/" element={<Welcome name="World" />} />
               <Route path="/fabric" element={<Fabric name="Fabric" />} />
               <Route path="/polygon" element={<Polygon name="Polygon" />} />
               <Route path="/dragable" element={<Dragable name="Dragable" />} />
