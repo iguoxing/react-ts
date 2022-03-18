@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, SettingOutlined } from '@ant-design/icons';
 
-const { SubMenu } = Menu;
+// const { SubMenu } = Menu;
 class PageMenu extends React.Component {
     constructor(props) {
         super(props);
