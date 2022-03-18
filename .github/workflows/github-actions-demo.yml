@@ -24,6 +24,9 @@ jobs:
 
       - name: Build 🏗️
         run: yarn build
+      - name: Create Tag Release
+        uses: beyond5959/create-release-github@v1
+
 
       # - name: Test 🚨
       #   run: npm test
