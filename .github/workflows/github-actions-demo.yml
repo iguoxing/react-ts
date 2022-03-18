@@ -36,13 +36,13 @@ jobs:
       # - name: Test 🚨
       #   run: npm test
       # 上传打包资源
-            - name: Deploy
-              uses: easingthemes/ssh-deploy@v2.0.7
-              env:
-                  SSH_PRIVATE_KEY: ${{ env.SERVER_PRIVATE_KEY }}
-                  ARGS: '-avz --delete'
-                  SOURCE: 'dist/'
-                  REMOTE_HOST: ${{ env.SERVER_HOST }}
-                  REMOTE_USER: ${{ env.USER_NAME }}
-                  TARGET: /var/www/susieTool # 服务器目标路径
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+            SSH_PRIVATE_KEY: ${{ env.SERVER_PRIVATE_KEY }}
+            ARGS: '-avz --delete'
+            SOURCE: 'dist/'
+            REMOTE_HOST: ${{ env.SERVER_HOST }}
+            REMOTE_USER: ${{ env.USER_NAME }}
+            TARGET: /var/www/susieTool # 服务器目标路径
 
