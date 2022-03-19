@@ -17,7 +17,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Before Deploy 🏗️
-        run: echo "🍏 1${{ secrets.SERVER_PRIVATE_KEY }}-3${{ secrets.USER_NAME }}--4${{ secrets.secrets.USER_NAME }}"
+        run: echo "🍏 1${{ env.SERVER_PRIVATE_KEY }}-3${{ env.secrets.USER_NAME }}--4${{ env.secrets.secrets.USER_NAME }}"
       - name: Install 🔧
         run: yarn install
 
@@ -41,10 +41,10 @@ jobs:
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
-            SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
+            SSH_PRIVATE_KEY: ${{ env.secrets.SERVER_PRIVATE_KEY }}
             ARGS: '-avz --delete'
             SOURCE: 'build/'
-            REMOTE_HOST: ${{ secrets.SERVER_HOST }}
-            REMOTE_USER: ${{ secrets.USER_NAME }}
+            REMOTE_HOST: ${{ env.secrets.SERVER_HOST }}
+            REMOTE_USER: ${{ env.secrets.USER_NAME }}
             TARGET: /var/www/susieTool # 服务器目标路径
 
