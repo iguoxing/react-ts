@@ -16,7 +16,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Before Deploy 🏗️
+      - name: Before Deploy2 🏗️
         run: echo "🍏 3${{ secrets.USER_NAME }}--4${{ env.secrets.SERVER_HOST }}"
       - name: Install 🔧
         run: yarn install
