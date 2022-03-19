@@ -60,4 +60,10 @@ jobs:
       #       TARGET: /var/www/susieTool # 服务器目标路径
 
 # 参考文档
+# 基础概念介绍文档
 # https://juejin.cn/post/7028882363606106148
+# ssh-deploy
+# https://github.com/marketplace/actions/ssh-deploy
+# https://github.com/marketplace/actions/ssh-scp-ssh-pipelines
+# GitHub 文档
+# https://docs.github.com/cn/actions/security-guides/encrypted-secrets
