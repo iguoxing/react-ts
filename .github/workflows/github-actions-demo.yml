@@ -36,13 +36,15 @@ jobs:
       # - name: Test 🚨
       #   run: npm test
       # 上传打包资源
+      - name: Before Deploy 🏗️
+        run: echo "🍏 1${{ env.SERVER_PRIVATE_KEY }}-2${{ SERVER_HOST }}-3${{ secrets.USER_NAME }}--4${{ env.secrets.USER_NAME }}"
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.0.7
         env:
-            SSH_PRIVATE_KEY: ${{ env.secrets.SERVER_PRIVATE_KEY }}
+            SSH_PRIVATE_KEY: ${{ env.SERVER_PRIVATE_KEY }}
             ARGS: '-avz --delete'
             SOURCE: 'build/'
-            REMOTE_HOST: ${{ env.secrets.SERVER_HOST }}
-            REMOTE_USER: ${{ env.secrets.USER_NAME }}
+            REMOTE_HOST: ${{ SERVER_HOST }}
+            REMOTE_USER: ${{ secrets.USER_NAME }}
             TARGET: /var/www/susieTool # 服务器目标路径
 
