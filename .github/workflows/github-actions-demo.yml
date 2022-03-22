@@ -38,7 +38,7 @@ jobs:
       # - name: Test 🚨
       #   run: npm test
       # 上传打包资源
-      - name: ssh deploy
+      - name: SSH Deploy
         uses: easingthemes/ssh-deploy@v2.2.11
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
