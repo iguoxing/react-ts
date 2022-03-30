@@ -24,16 +24,20 @@ class PageMenu extends React.Component {
                     <Menu.Item key="index" icon={<MailOutlined />}>
                         <Link to="/">首页</Link>
                     </Menu.Item>
-                    <SubMenu key="SubMenu" icon={<SettingOutlined />} title="React API">
-                        <Menu.ItemGroup title="Hook">
+                    <SubMenu key="SubMenu" icon={<SettingOutlined />} title="React">
+                        <Menu.ItemGroup title="Basic">
+                            <Menu.Item key="setting:Props">
+                                <Link to="reactProps">Props</Link>
+                            </Menu.Item>
+                            <Menu.Item key="setting:3">
+                                <Link to="reactRef">Ref</Link>
+                            </Menu.Item>
+                        </Menu.ItemGroup>
+                        <Menu.ItemGroup title="Hook API">
                             <Menu.Item key="setting:1">
                                 <Link to="hookUseCallback">HookUseCallback</Link>
                             </Menu.Item>
                         </Menu.ItemGroup>
-                        {/* <Menu.ItemGroup title="Item 2">
-                            <Menu.Item key="setting:3">Option 3</Menu.Item>
-                            <Menu.Item key="setting:4">Option 4</Menu.Item>
-                        </Menu.ItemGroup> */}
                     </SubMenu>
                     <SubMenu key="fabric" icon={<AppstoreOutlined />} title="Fabric">
                         <Menu.ItemGroup title="Components">
