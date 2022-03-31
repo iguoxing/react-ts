@@ -2,7 +2,7 @@
  * @Author: ArdenZhao
  * @Date: 2021-12-23 10:36:10
  * @LastEditors: bogon
- * @LastEditTime: 2022-03-30 16:14:57
+ * @LastEditTime: 2022-03-31 15:45:44
  * @FilePath: /react-ts/src/App.js
  */
 import React, { Suspense } from 'react';
@@ -14,6 +14,7 @@ import Fabric from './components/Fabric'
 import Dragable from './components/Dragable'
 import ReactProps from './components/react/1-Props'
 import ReactRef from './components/react/2-Ref'
+import ReactState from './components/react/3-State'
 import HookUseCallback from './components/react/Hook-useCallback'
 import Polygon from './components/Polygon';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -33,6 +34,7 @@ function App() {
               <Route path="/dragable" element={<Dragable name="Dragable" />} />
               <Route path="/reactProps" element={<ReactProps name="ReactProps" />} />
               <Route path="/reactRef" element={<ReactRef name="ReactRef" />} />
+              <Route path="/reactState" element={<ReactState name="ReactState" />} />
               <Route path="/hookUseCallback" element={<HookUseCallback name="HookUseCallback" />} />
               <Route path="/excel" element={<Excel name="Excel" />} />
             </Routes>

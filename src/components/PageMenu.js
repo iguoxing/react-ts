@@ -29,8 +29,11 @@ class PageMenu extends React.Component {
                             <Menu.Item key="setting:Props">
                                 <Link to="reactProps">Props</Link>
                             </Menu.Item>
-                            <Menu.Item key="setting:3">
+                            <Menu.Item key="setting:Ref">
                                 <Link to="reactRef">Ref</Link>
+                            </Menu.Item>
+                            <Menu.Item key="setting:State">
+                                <Link to="reactState">State</Link>
                             </Menu.Item>
                         </Menu.ItemGroup>
                         <Menu.ItemGroup title="Hook API">
