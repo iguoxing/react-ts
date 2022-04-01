@@ -1,14 +1,14 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-04-01 16:45:30
- * @LastEditTime: 2022-04-01 17:01:16
+ * @LastEditTime: 2022-04-01 17:56:09
  * @FilePath: /react-ts/src/components/react/5-LifeCycle.js
  * @Description: file information
  */
 
 import React from 'react';
 import "antd/dist/antd.css";
-import { Button, Input } from 'antd';
+import { Button } from 'antd';
 
 class SubComponent extends React.Component {
   // 挂载阶段
