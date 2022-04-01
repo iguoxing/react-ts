@@ -2,7 +2,7 @@
  * @Author: ArdenZhao
  * @Date: 2021-12-23 10:36:10
  * @LastEditors: bogon
- * @LastEditTime: 2022-03-31 15:45:44
+ * @LastEditTime: 2022-04-01 16:48:59
  * @FilePath: /react-ts/src/App.js
  */
 import React, { Suspense } from 'react';
@@ -15,6 +15,8 @@ import Dragable from './components/Dragable'
 import ReactProps from './components/react/1-Props'
 import ReactRef from './components/react/2-Ref'
 import ReactState from './components/react/3-State'
+import ReactForm from './components/react/4-Form'
+import ReactLifeCycle from './components/react/5-LifeCycle' // 生命周期
 import HookUseCallback from './components/react/Hook-useCallback'
 import Polygon from './components/Polygon';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -35,6 +37,8 @@ function App() {
               <Route path="/reactProps" element={<ReactProps name="ReactProps" />} />
               <Route path="/reactRef" element={<ReactRef name="ReactRef" />} />
               <Route path="/reactState" element={<ReactState name="ReactState" />} />
+              <Route path="/reactForm" element={<ReactForm name="ReactForm" />} />
+              <Route path="/reactLifeCycle" element={<ReactLifeCycle name="ReactLifeCycle" />} />
               <Route path="/hookUseCallback" element={<HookUseCallback name="HookUseCallback" />} />
               <Route path="/excel" element={<Excel name="Excel" />} />
             </Routes>

@@ -35,6 +35,12 @@ class PageMenu extends React.Component {
                             <Menu.Item key="setting:State">
                                 <Link to="reactState">State</Link>
                             </Menu.Item>
+                            <Menu.Item key="setting:LifeCycle">
+                                <Link to="reactLifeCycle">生命周期</Link>
+                            </Menu.Item>
+                            <Menu.Item key="setting:Form">
+                                <Link to="reactForm">受控组件与非受控组件</Link>
+                            </Menu.Item>
                         </Menu.ItemGroup>
                         <Menu.ItemGroup title="Hook API">
                             <Menu.Item key="setting:1">
