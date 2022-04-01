@@ -40,7 +40,7 @@ jobs:
       # - name: Test 🚨
       #   run: npm test
       # 上传打包资源
-      - name: SSH Deploy Update Key
+      - name: SSH Deploy Update rsync
         uses: easingthemes/ssh-deploy@v2.2.11
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
