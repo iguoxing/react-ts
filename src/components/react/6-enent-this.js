@@ -1,13 +1,20 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-04-13 15:48:04
- * @LastEditTime: 2022-04-13 16:23:15
+ * @LastEditTime: 2022-04-13 18:34:24
  * @FilePath: /react-ts/src/components/react/6-enent-this.js
  * @Description: file information
  */
 import React from 'react';
 import "antd/dist/antd.css";
 import { Button } from 'antd';
+import {
+  // PriorityQueue,
+  MinPriorityQueue,
+  MaxPriorityQueue,
+  // ICompare,
+  // IGetCompareValue,
+} from '@datastructures-js/priority-queue';
 
 class SubComponent extends React.Component {
   // 挂载阶段
@@ -42,7 +49,20 @@ class SubComponent extends React.Component {
   }
 }
 
+// datastructures-js/priority-queue
 function ReactParams(props) {
+  const numbers = [3, -2, 5, 0, -1, -5, 4];
+  const numbers2 = [3, -2, 5, 0, -1, -5, 4];
+
+  const maxpq = MaxPriorityQueue.fromArray(numbers);
+  const minpq = MinPriorityQueue.fromArray(numbers2);
+
+  console.log(numbers); // [5, 0, 4, -2, -1, -5, 3]
+  console.log(numbers2); //  [-5, -1, -2, 3, 0, 5, 4]
+  maxpq.dequeue(); // 5
+  maxpq.dequeue(); // 4
+  maxpq.dequeue(); // 3
+  console.log(numbers); // [ 0, -1, -5, -2 ]
   return (
     <div>
       <h1>Learn, {props.name}</h1>
