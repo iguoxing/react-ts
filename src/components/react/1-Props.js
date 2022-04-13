@@ -1,7 +1,7 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-03-30 15:52:22
- * @LastEditTime: 2022-03-31 15:43:21
+ * @LastEditTime: 2022-04-13 15:23:28
  * @FilePath: /react-ts/src/components/react/1-Props.js
  * @Description:
  * 1、点击事件+添加内联样式
@@ -18,43 +18,51 @@ function SubComponent(props) {
   let { name, age, sum } = props
   // 子传父
   function clickBtn() {
-    console.log('clickBtn')
-    props.getChildData(sum++)
+    props.getChildData(sum)
   }
   return (
     <>
       {/* <h1>子组件 </h1> */}
-      <p>姓名： {name} 年龄：{age}</p>
+      <p>姓名： {name} 年龄：{age} 数数：{sum}</p>
       <Button onClick={clickBtn} type="primary">点击事件</Button>
     </>
   )
 }
 // 设置默认参数
-SubComponent.defaultProps = {
-  age: 18,
-}
+// SubComponent.defaultProps = {
+//   age: 18,
+// }
 
-function ReactProps(props) {
-  const divStyle = {
+class ReactProps extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'ArdenZhao',
+      age: 18,
+      sum: 0
+    }
+    // this 绑定
+    this.getChildData = this.getChildData.bind(this)
+  }
+  divStyle = {
     color: 'red'
   }
-  const prams = {
-    name: 'ArdenZhao1',
-    sum: 0
+  getChildData(sum) {
+    // console.log('[ sum ] >', sum, sum + 1)
+    this.setState({ sum: sum + 1 });
+    // console.log('接收到子组件的值66', sum, this.state.sum)
   }
+  render() {
+    return (
+      <div>
+        <h1 style={this.divStyle}>Learn, {this.props.name}</h1>
+        {/* 点击方法 */}
 
-  function getChildData(data) {
-    console.log('接收到子组件的值', data)
+        {/* 传递参数的方法——运算拓展符 */}
+        <SubComponent getChildData={this.getChildData} {...this.state} />
+      </div>
+    );
   }
-  return (
-    <div>
-      <h1 style={divStyle}>Learn, {props.name}</h1>
-      {/* 点击方法 */}
-
-      {/* 传递参数的方法——运算拓展符 */}
-      <SubComponent getChildData={getChildData} {...prams} />
-    </div>
-  );
 }
 export default ReactProps
 

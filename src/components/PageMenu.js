@@ -41,6 +41,9 @@ class PageMenu extends React.Component {
                             <Menu.Item key="setting:Form">
                                 <Link to="reactForm">受控组件与非受控组件</Link>
                             </Menu.Item>
+                            <Menu.Item key="setting:Params">
+                                <Link to="reactParams">事件传参</Link>
+                            </Menu.Item>
                         </Menu.ItemGroup>
                         <Menu.ItemGroup title="Hook API">
                             <Menu.Item key="setting:1">
