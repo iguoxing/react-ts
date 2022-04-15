@@ -49,6 +49,9 @@ class PageMenu extends React.Component {
                             <Menu.Item key="setting:hookUseState">
                                 <Link to="hookUseState">useState</Link>
                             </Menu.Item>
+                            <Menu.Item key="setting:useEffect">
+                                <Link to="hookUseEffect">useEffect</Link>
+                            </Menu.Item>
                             <Menu.Item key="setting:1">
                                 <Link to="hookUseCallback">HookUseCallback</Link>
                             </Menu.Item>
