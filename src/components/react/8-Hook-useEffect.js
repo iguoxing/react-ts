@@ -1,7 +1,7 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-04-15 10:33:48
- * @LastEditTime: 2022-04-15 11:26:59
+ * @LastEditTime: 2022-04-15 15:31:15
  * @FilePath: /react-ts/src/components/react/8-Hook-useEffect.js
  * @Description: file information
  */
@@ -42,7 +42,7 @@ function HookUseEffect(props) {
       console.log('useEffectsetNum', num);
     }, 1000)
     // 模拟Ajax请求
-  }, [reset])// 需要有监听的值，否则不会报错
+  }, [reset])// 需要有监听的值，否则会报错
   return (
     <div>
       <h1>Learn, {props.name}</h1>
