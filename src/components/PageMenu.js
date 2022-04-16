@@ -48,9 +48,12 @@ class PageMenu extends React.Component {
                         <Menu.ItemGroup title="Hook API">
                             <Menu.Item key="setting:hookUseState">
                                 <Link to="hookUseState">useState</Link>
-                            </Menu.Item>
+                            </Menu.Item>useContext
                             <Menu.Item key="setting:useEffect">
                                 <Link to="hookUseEffect">useEffect</Link>
+                            </Menu.Item>
+                            <Menu.Item key="setting:useContext">
+                                <Link to="hookUseContext">useContext</Link>
                             </Menu.Item>
                             <Menu.Item key="setting:1">
                                 <Link to="hookUseCallback">HookUseCallback</Link>
