@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "caniuse-lite": "^1.0.30001332",
     "fabric": "^4.6.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
