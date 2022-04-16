@@ -1,7 +1,7 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-04-16 09:30:20
- * @LastEditTime: 2022-04-16 15:04:17
+ * @LastEditTime: 2022-04-16 15:05:44
  * @FilePath: /react-ts/src/components/react/9-Hook-useContext.js
  * @Description: 爷孙组件传值
  */
@@ -36,6 +36,3 @@ export default () => {
     </ContextProvider>
   )
 }
-
-// 参考链接
-// https://flaviocopes.com/react-hook-usecallback/
