@@ -16,13 +16,15 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Before Deploy2 🏗️
-        run: echo "🍏 3${{ secrets.USER_NAME }}--4${{ env.secrets.SERVER_HOST }}"
+      # - name: Before Deploy2 🏗️
+      #   run: echo "🍏 3${{ secrets.USER_NAME }}--4${{ env.secrets.SERVER_HOST }}"
+      # - name: Connect to the server🔧
+      #   run: ssh ${{ secrets.REMOTE_TARGET }}@${{ secrets.SERVER_HOST }} -A
       - name: Install 🔧
         run: yarn install
 
-      # - name: Lint 🧐
-      #   run: npm run lint
+      # # - name: Lint 🧐
+      # #   run: npm run lint
 
       - name: Build 🏗️
         run: yarn build
@@ -38,7 +40,7 @@ jobs:
       # - name: Test 🚨
       #   run: npm test
       # 上传打包资源
-      - name: ssh deploy
+      - name: SSH Deploy Update Key
         uses: easingthemes/ssh-deploy@v2.2.11
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
