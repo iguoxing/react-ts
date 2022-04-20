@@ -1,8 +1,8 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-23 10:36:10
- * @LastEditors: Zhaos-MacBook-Pro.local
- * @LastEditTime: 2022-04-19 10:50:28
+ * @LastEditors: bogon
+ * @LastEditTime: 2022-04-20 11:19:47
  * @FilePath: /react-ts/src/App.js
  */
 import React, { Suspense } from 'react';
@@ -23,6 +23,7 @@ import HookUseEffect from './components/react/8-Hook-useEffect'
 import HookUseContext from './components/react/9-Hook-useContext'
 import HookUseReducer from './components/react/10-Hook-useReducer'
 import HookUseRef from './components/react/11-Hook-useRef'
+import HookUseMemo from './components/react/12-Hook-useMemo'
 import HookUseCallback from './components/react/Hook-useCallback'
 import Polygon from './components/Polygon';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -51,6 +52,7 @@ function App() {
               <Route path="/hookUseContext" element={<HookUseContext name="HookUseContext" />} />
               <Route path="/hookUseReducer" element={<HookUseReducer name="hookUseReducer" />} />
               <Route path="/hookUseRef" element={<HookUseRef name="hookUseRef" />} />
+              <Route path="/hookUseMemo" element={<HookUseMemo name="hookUseMemo" />} />
               <Route path="/hookUseCallback" element={<HookUseCallback name="HookUseCallback" />} />
               <Route path="/excel" element={<Excel name="Excel" />} />
             </Routes>
