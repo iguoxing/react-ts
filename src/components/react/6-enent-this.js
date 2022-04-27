@@ -1,7 +1,7 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-04-13 15:48:04
- * @LastEditTime: 2022-04-13 18:34:24
+ * @LastEditTime: 2022-04-19 10:55:33
  * @FilePath: /react-ts/src/components/react/6-enent-this.js
  * @Description: file information
  */
@@ -10,7 +10,7 @@ import "antd/dist/antd.css";
 import { Button } from 'antd';
 import {
   // PriorityQueue,
-  MinPriorityQueue,
+  // MinPriorityQueue,
   MaxPriorityQueue,
   // ICompare,
   // IGetCompareValue,
@@ -55,7 +55,7 @@ function ReactParams(props) {
   const numbers2 = [3, -2, 5, 0, -1, -5, 4];
 
   const maxpq = MaxPriorityQueue.fromArray(numbers);
-  const minpq = MinPriorityQueue.fromArray(numbers2);
+  // const minpq = MinPriorityQueue.fromArray(numbers2);
 
   console.log(numbers); // [5, 0, 4, -2, -1, -5, 3]
   console.log(numbers2); //  [-5, -1, -2, 3, 0, 5, 4]

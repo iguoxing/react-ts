@@ -1,7 +1,7 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-04-15 10:33:48
- * @LastEditTime: 2022-04-15 15:31:15
+ * @LastEditTime: 2022-04-19 10:56:50
  * @FilePath: /react-ts/src/components/react/8-Hook-useEffect.js
  * @Description: file information
  */
@@ -12,7 +12,6 @@ import "antd/dist/antd.css";
 function HookUseEffect(props) {
   // useState 不能放在函数内部，这里设置初始值为0
   const [num, setNum] = useState(0);
-  const [obj, setObj] = useState({ a: 1 });
   const [refresh, setRefresh] = useState(100)
   const clickX = () => {
     setNum(num + 1);
@@ -29,7 +28,7 @@ function HookUseEffect(props) {
     // return () => { // 非必须
     //   console.log('useEffect return');
     // }
-  }, [refresh])// 需要有监听的值，否则不会报错
+  }, [num, refresh])// 需要有监听的值，否则不会报错
 
   const [reset, setReset] = useState(100)
   useEffect(() => {
@@ -42,7 +41,7 @@ function HookUseEffect(props) {
       console.log('useEffectsetNum', num);
     }, 1000)
     // 模拟Ajax请求
-  }, [reset])// 需要有监听的值，否则会报错
+  }, [num, reset])// 需要有监听的值，否则会报错
   return (
     <div>
       <h1>Learn, {props.name}</h1>

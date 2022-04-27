@@ -58,6 +58,12 @@ class PageMenu extends React.Component {
                             <Menu.Item key="setting:useReducer">
                                 <Link to="hookUseReducer">useReducer</Link>
                             </Menu.Item>
+                            <Menu.Item key="setting:useRef">
+                                <Link to="hookUseRef">useRef</Link>
+                            </Menu.Item>
+                            <Menu.Item key="setting:useMemo">
+                                <Link to="hookUseMemo">useMemo</Link>
+                            </Menu.Item>
                             <Menu.Item key="setting:1">
                                 <Link to="hookUseCallback">HookUseCallback</Link>
                             </Menu.Item>

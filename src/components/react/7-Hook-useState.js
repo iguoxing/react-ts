@@ -1,11 +1,11 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2022-04-14 16:46:18
- * @LastEditTime: 2022-04-14 17:06:55
+ * @LastEditTime: 2022-04-19 10:55:43
  * @FilePath: /react-ts/src/components/react/7-Hook-useState.js
  * @Description: file information
  */
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'antd';
 import "antd/dist/antd.css";
 
