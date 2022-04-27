@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, SettingOutlined, FacebookOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 class PageMenu extends React.Component {
@@ -83,6 +83,13 @@ class PageMenu extends React.Component {
                     <Menu.Item key="excel" icon={<MailOutlined />}>
                         <Link to="/excel">Excel</Link>
                     </Menu.Item>
+                    <SubMenu key="face" icon={<FacebookOutlined />} title="面试">
+                        <Menu.ItemGroup title="JS">
+                            <Menu.Item key="divof3">
+                                <Link to="divof3">3个div点击</Link>
+                            </Menu.Item>
+                        </Menu.ItemGroup>
+                    </SubMenu>
                     {/* <Menu.Item key="hookUseCallback" icon={<AppstoreOutlined />}>
                         <Link to="hookUseCallback">HookUseCallback</Link>
                     </Menu.Item> */}

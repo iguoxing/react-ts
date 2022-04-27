@@ -1,8 +1,8 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-23 10:36:10
- * @LastEditors: Zhaos-MacBook-Pro.local
- * @LastEditTime: 2022-04-18 18:03:23
+ * @LastEditors: zhaodembp
+ * @LastEditTime: 2022-04-27 08:03:37
  * @FilePath: /react-ts/src/App.js
  */
 import React, { Suspense } from 'react';
@@ -51,6 +51,7 @@ function App() {
               <Route path="/hookUseReducer" element={<HookUseReducer name="HookUseState" />} />
               <Route path="/hookUseCallback" element={<HookUseCallback name="HookUseCallback" />} />
               <Route path="/excel" element={<Excel name="Excel" />} />
+              <Route path="/divof3" element={<HookUseCallback name="Divof3" />} />
             </Routes>
           </Suspense>
         </div>
