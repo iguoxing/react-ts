@@ -1,8 +1,8 @@
 /*
  * @Author: ArdenZhao
  * @Date: 2021-12-23 10:36:10
- * @LastEditors: zhaodembp
- * @LastEditTime: 2022-04-27 11:13:18
+ * @LastEditors: MacBook-Pro.local
+ * @LastEditTime: 2022-05-29 15:57:44
  * @FilePath: /react-ts/src/App.js
  */
 import React, { Suspense } from 'react';
@@ -25,6 +25,7 @@ import HookUseReducer from './components/react/10-Hook-useReducer'
 import HookUseRef from './components/react/11-Hook-useRef'
 import HookUseMemo from './components/react/12-Hook-useMemo'
 import HookUseCallback from './components/react/Hook-useCallback'
+import JwtDecodeFunction from './components/lib/1-jwt-decode'
 import Polygon from './components/Polygon';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "tailwindcss/tailwind.css"
@@ -55,6 +56,7 @@ function App() {
               <Route path="/hookUseMemo" element={<HookUseMemo name="hookUseMemo" />} />
               <Route path="/hookUseCallback" element={<HookUseCallback name="HookUseCallback" />} />
               <Route path="/excel" element={<Excel name="Excel" />} />
+              <Route path="/jwtdecode" element={<JwtDecodeFunction name="JwtDecode" />} />
               <Route path="/divof3" element={<HookUseCallback name="Divof3" />} />
             </Routes>
           </Suspense>

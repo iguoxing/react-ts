@@ -89,6 +89,13 @@ class PageMenu extends React.Component {
                     <Menu.Item key="excel" icon={<MailOutlined />}>
                         <Link to="/excel">Excel</Link>
                     </Menu.Item>
+                    <SubMenu key="jslib" icon={<AppstoreOutlined />} title="JS库">
+                        <Menu.ItemGroup title="JS">
+                            <Menu.Item key="jwt-decode">
+                                <Link to="jwtdecode">jwt-decode</Link>
+                            </Menu.Item>
+                        </Menu.ItemGroup>
+                    </SubMenu>
                     <SubMenu key="face" icon={<FacebookOutlined />} title="面试">
                         <Menu.ItemGroup title="JS">
                             <Menu.Item key="divof3">
